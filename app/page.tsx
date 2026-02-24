@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Navbar from "./components/Navbar";
+import About from "./components/sections/About";
 import Hero from "./components/sections/Hero";
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <About />
     </>
   );
 }
