@@ -62,7 +62,7 @@ export default function About() {
                 {f.icon}
               </div>
 
-              <div className="md:min-h-[60px] flex items-center mb-2">
+              <div className="md:min-h-15 flex items-center mb-2">
                 <h3 className="text-lg md:text-xl font-bold tracking-tight leading-tight">
                   {f.title}
                 </h3>
