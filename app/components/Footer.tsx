@@ -126,7 +126,9 @@ export default function Footer() {
           <div className="flex flex-col md:row justify-between items-center gap-6">
             <p className="text-accent-foreground/40 text-sm text-center md:text-left">
               © {currentYear} {t.footer.company}.{" "}
-              {language === "de" ? "Alle Rechte vorbehalten." : "All rights reserved."}
+              {language === "de"
+                ? "Alle Rechte vorbehalten."
+                : "All rights reserved."}
             </p>
             <div className="flex gap-8 text-xs font-medium">
               <a

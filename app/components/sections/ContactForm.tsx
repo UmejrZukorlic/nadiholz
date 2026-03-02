@@ -16,21 +16,9 @@ export default function ContactForm() {
     }
   };
 
-  const woodOptions = [
-    "Eiche",
-    "Nussbaum",
-    "Buche",
-    "Kirsche",
-    "Esche",
-  ];
+  const woodOptions = ["Eiche", "Nussbaum", "Buche", "Kirsche", "Esche"];
 
-  const woodOptionsEn = [
-    "Oak",
-    "Walnut",
-    "Beech",
-    "Cherry",
-    "Ash",
-  ];
+  const woodOptionsEn = ["Oak", "Walnut", "Beech", "Cherry", "Ash"];
 
   return (
     <section id="anfrage" className="py-24 md:py-32 bg-background">
@@ -123,13 +111,19 @@ export default function ContactForm() {
               <label
                 className="text-sm font-medium text-foreground"
                 htmlFor="dimensions">
-                {language === "de" ? "Maße (L x B x H)" : "Dimensions (W x D x H)"}
+                {language === "de"
+                  ? "Maße (L x B x H)"
+                  : "Dimensions (W x D x H)"}
               </label>
               <input
                 id="dimensions"
                 name="dimensions"
                 className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                placeholder={language === "de" ? "z.B. 180 x 90 x 75 cm" : "e.g. 180 x 90 x 75 cm"}
+                placeholder={
+                  language === "de"
+                    ? "z.B. 180 x 90 x 75 cm"
+                    : "e.g. 180 x 90 x 75 cm"
+                }
               />
             </div>
             <div className="space-y-2">
@@ -150,7 +144,7 @@ export default function ContactForm() {
                     <option key={wood} value={wood}>
                       {wood}
                     </option>
-                  )
+                  ),
                 )}
                 <option value="other">
                   {language === "de"
