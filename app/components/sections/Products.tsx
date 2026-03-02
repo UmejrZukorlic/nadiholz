@@ -13,7 +13,7 @@ export default function ProductsSection() {
     category: item.category,
     name: item.name,
     desc: item.desc,
-    image: "/images/1.png",
+    image: item.image,
   }));
 
   return (

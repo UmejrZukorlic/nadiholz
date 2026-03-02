@@ -47,77 +47,87 @@ export const translations = {
         { value: "∞", label: "Leidenschaft" },
       ],
     },
-    // Products Section
+    // Products Section - USKLAĐENO SA SLIKAMA
     products: {
       label: "Unsere Produkte",
-      title: "Meisterstücke aus Massivholz",
+      title: "Meisterstücke aus unserer Werkstatt",
       description:
-        "Entdecken Sie unsere Kollektion handgefertigter Möbel. Jedes Stück ist ein Unikat, gefertigt mit Liebe zum Detail und höchster Präzision.",
+        "Entdecken Sie unsere Kollektion handgefertigter Unikate. Jedes Stück wird sa ljubavlju prema detaljima i najvišom preciznošću.",
       items: [
         {
-          category: "Esstische",
-          name: "Esstisch Natur",
-          desc: "Massiver Esstisch aus Eichenholz für 6-8 Personen.",
+          category: "Gartenmöbel",
+          name: "Duo Gartenbank",
+          desc: "Massive Gartenbank mit integriertem Mitteltisch für entspannte Stunden im Freien.",
+          image: "/images/1.png",
         },
         {
-          category: "Couchtische",
-          name: "Couchtisch Rustikal",
-          desc: "Naturbelassener Couchtisch mit lebendiger Baumkante.",
+          category: "Theken & Bars",
+          name: "Rustikale Bartheke",
+          desc: "Handgefertigte Bar aus geflammtem Holz mit einer markanten, rustikalen Optik.",
+          image: "/images/2.jfif",
         },
         {
-          category: "Sitzbänke",
-          name: "Sitzbank Modern",
-          desc: "Elegante Sitzbank aus massivem Buchenholz.",
+          category: "Sitzgruppen",
+          name: "Massive Picknick-Garnitur",
+          desc: "Robuste Holzsitzbank mit fest montiertem Tisch für Garten ili parkove.",
+          image: "/images/3.jfif",
         },
         {
-          category: "Regale",
-          name: "Wandregal Eiche",
-          desc: "Minimalistisches Wandregal aus geöltem Eichenholz.",
+          category: "Liegen",
+          name: "Holz-Sonnenliege",
+          desc: "Bequeme Sonnenliege aus massivem Holz für optimalen Komfort beim Sonnenbaden.",
+          image: "/images/4.jfif",
         },
         {
-          category: "Nachttische",
-          name: "Nachttisch Klassik",
-          desc: "Eleganter Nachttisch mit natürlicher Holzmaserung.",
+          category: "Tische",
+          name: "Design-Gartentisch",
+          desc: "Rustikaler Holztisch mit massivem X-Gestell für hohe Stabilität.",
+          image: "/images/5.png",
         },
         {
-          category: "Schreibtische",
-          name: "Schreibtisch Home",
-          desc: "Moderner Schreibtisch für das Home Office.",
+          category: "Sitzkombinationen",
+          name: "Balkon-Duo Set",
+          desc: "Kompakte Sitzlösung mit zwei Stühlen und integriertem Abstelltisch.",
+          image: "/images/1.png",
         },
       ],
+      requestQuote: "Angebot anfragen",
     },
-    // Materials Section
+    // Materials Section - USKLAĐENO SA SLIKOM
     materials: {
       label: "Materialien & Qualität",
-      title: "Nur das beste Holz",
+      title: "Only the Finest Wood",
       description:
-        "Wir verwenden ausschließlich zertifiziertes Massivholz aus nachhaltiger Forstwirtschaft. Jede Holzart hat ihre eigenen Charaktereigenschaften, die wir sorgfältig für Ihr Möbelstück auswählen.",
+        "We exclusively use certified solid wood from sustainable forestry. Each type of wood has its own characteristics, which we carefully select for your furniture piece.",
       woods: [
         {
-          name: "Eiche",
+          name: "Oak",
           description:
-            "Robust und langlebig mit markanter Maserung. Ideal für Esstische und repräsentative Möbelstücke.",
-          features: ["Sehr hart", "Langlebig", "Feuchtigkeitsbeständig"],
+            "Robust and durable with distinctive grain. Ideal for dining tables and representative furniture.",
+          features: ["Very Hard", "Durable", "Moisture Resistant"],
         },
         {
-          name: "Nussbaum",
+          name: "Walnut",
           description:
-            "Dunkles, edles Holz mit warmem Farbton. Perfekt für elegante Wohnmöbel.",
-          features: ["Edle Optik", "Mittlere Härte", "Wertbeständig"],
+            "Dark, noble wood with warm tones. Perfect for elegant living room furniture.",
+          features: ["Noble Look", "Medium Hardness", "Value Stable"],
         },
         {
-          name: "Buche",
+          name: "Beech",
           description:
-            "Vielseitig und pflegeleicht. Beliebt für moderne, zeitlose Designs.",
-          features: ["Gleichmäßige Struktur", "Strapazierfähig", "Preiswert"],
+            "Versatile and easy to maintain. Popular for modern, timeless designs.",
+          features: ["Even Structure", "Durable", "Affordable"],
         },
         {
-          name: "Kirsche",
+          name: "Cherry",
           description:
-            "Warme rötliche Töne, die mit der Zeit nachdunkeln. Für besondere Akzente.",
-          features: ["Warme Farbe", "Feine Maserung", "Exklusiv"],
+            "Warm reddish tones that darken over time. For special accents.",
+          features: ["Warm Color", "Fine Grain", "Exclusive"],
         },
       ],
+      sustainableTitle: "Sustainable Forestry",
+      sustainableDesc:
+        "All our wood comes from FSC-certified forests in Europe. For every tree felled, several new ones are planted. This is how we contribute to ensuring that future generations can also benefit from the beauty of natural wood.",
     },
     // Contact Form Section
     contact: {
@@ -152,14 +162,10 @@ export const translations = {
       phone: "Telefon",
       email: "E-Mail",
       hours: "Öffnungszeiten",
-      location: `Holzwerk Möbelmanufaktur
-Musterstraße 42
-80331 München, Deutschland`,
+      location: `Holzwerk Möbelmanufaktur\nMusterstraße 42\n80331 München, Deutschland`,
       phoneNumber: "+49 89 1234 5678",
       emailAddress: "info@holzwerk-moebel.de",
-      openingHours: `Mo - Fr: 8:00 - 18:00 Uhr
-Sa: 9:00 - 14:00 Uhr (nach Vereinbarung)
-So: Geschlossen`,
+      openingHours: `Mo - Fr: 8:00 - 18:00 Uhr\nSa: 9:00 - 14:00 Uhr (nach Vereinbarung)\nSo: Geschlossen`,
     },
     // Footer
     footer: {
@@ -167,7 +173,7 @@ So: Geschlossen`,
       tagline: "Handgefertigte Möbel aus Deutschland",
       quickLinks: "Schnelllinks",
       contact: "Kontakt",
-      copyRight: "© 2024 Holzwerk. Alle Rechte vorbehalten.",
+      copyRight: "© 2026 Holzwerk. Alle Rechte vorbehalten.",
     },
   },
   en: {
@@ -218,51 +224,58 @@ So: Geschlossen`,
         { value: "∞", label: "Passion" },
       ],
     },
-    // Products Section
+    // Products Section - USKLAĐENO SA SLIKAMA
     products: {
       label: "Our Products",
-      title: "Masterpieces from Solid Wood",
+      title: "Masterpieces from our Workshop",
       description:
-        "Discover our collection of handcrafted furniture. Each piece is unique, crafted with attention to detail and highest precision.",
+        "Discover our collection of handcrafted originals. Each piece is unique, crafted with attention to detail and highest precision.",
       items: [
         {
-          category: "Dining Tables",
-          name: "Natural Dining Table",
-          desc: "Solid oak dining table for 6-8 people.",
+          category: "Garden Furniture",
+          name: "Duo Garden Bench",
+          desc: "Solid garden bench with integrated middle table for relaxing outdoor hours.",
+          image: "/images/1.png",
         },
         {
-          category: "Coffee Tables",
-          name: "Rustic Coffee Table",
-          desc: "Natural coffee table with vibrant live edge.",
+          category: "Counter & Bars",
+          name: "Rustic Bar Counter",
+          desc: "Handcrafted bar made from scorched wood with a striking, rustic look.",
+          image: "/images/2.jfif",
         },
         {
-          category: "Benches",
-          name: "Modern Bench",
-          desc: "Elegant bench made from solid beech wood.",
+          category: "Outdoor Sets",
+          name: "Massive Picnic Set",
+          desc: "Robust wooden bench with a fixed table for garden or park use.",
+          image: "/images/3.jfif",
         },
         {
-          category: "Shelves",
-          name: "Oak Wall Shelf",
-          desc: "Minimalistic wall shelf from oiled oak wood.",
+          category: "Loungers",
+          name: "Wooden Sun Lounger",
+          desc: "Comfortable sun lounger made from solid wood for optimal relaxation.",
+          image: "/images/4.jfif",
         },
         {
-          category: "Nightstands",
-          name: "Classic Nightstand",
-          desc: "Elegant nightstand with natural wood grain.",
+          category: "Tables",
+          name: "Design Garden Table",
+          desc: "Rustic wooden table with a massive X-frame for high stability.",
+          image: "/images/5.png",
         },
         {
-          category: "Desks",
-          name: "Home Desk",
-          desc: "Modern desk for home office use.",
+          category: "Seating Combos",
+          name: "Balkony Duo Set",
+          desc: "Compact seating solution with two chairs and an integrated side table.",
+          image: "/images/1.png",
         },
       ],
+      requestQuote: "Request Quote",
     },
-    // Materials Section
+    // Materials Section - USKLAĐENO SA SLIKOM
     materials: {
       label: "Materials & Quality",
-      title: "Only the Best Wood",
+      title: "Only the Finest Wood",
       description:
-        "We use exclusively certified solid wood from sustainable forestry. Each wood species has its own characteristic properties, which we carefully select for your furniture piece.",
+        "We exclusively use certified solid wood from sustainable forestry. Each type of wood has its own characteristics, which we carefully select for your furniture piece.",
       woods: [
         {
           name: "Oak",
@@ -273,14 +286,14 @@ So: Geschlossen`,
         {
           name: "Walnut",
           description:
-            "Dark, noble wood with warm color tones. Perfect for elegant living room furniture.",
+            "Dark, noble wood with warm tones. Perfect for elegant living room furniture.",
           features: ["Noble Look", "Medium Hardness", "Value Stable"],
         },
         {
           name: "Beech",
           description:
-            "Versatile and easy to care for. Popular for modern, timeless designs.",
-          features: ["Uniform Structure", "Durable", "Affordable"],
+            "Versatile and easy to maintain. Popular for modern, timeless designs.",
+          features: ["Even Structure", "Durable", "Affordable"],
         },
         {
           name: "Cherry",
@@ -289,6 +302,9 @@ So: Geschlossen`,
           features: ["Warm Color", "Fine Grain", "Exclusive"],
         },
       ],
+      sustainableTitle: "Sustainable Forestry",
+      sustainableDesc:
+        "All our wood comes from FSC-certified forests in Europe. For every tree felled, several new ones are planted. This is how we contribute to ensuring that future generations can also benefit from the beauty of natural wood.",
     },
     // Contact Form Section
     contact: {
@@ -323,14 +339,10 @@ So: Geschlossen`,
       phone: "Phone",
       email: "E-Mail",
       hours: "Opening Hours",
-      location: `Holzwerk Furniture Manufactory
-Musterstraße 42
-80331 Munich, Germany`,
+      location: `Holzwerk Furniture Manufactory\nMusterstraße 42\n80331 Munich, Germany`,
       phoneNumber: "+49 89 1234 5678",
       emailAddress: "info@holzwerk-moebel.de",
-      openingHours: `Mon - Fri: 8:00 - 18:00
-Sat: 9:00 - 14:00 (by appointment)
-Sun: Closed`,
+      openingHours: `Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM (by appointment)\nSun: Closed`,
     },
     // Footer
     footer: {
@@ -338,7 +350,7 @@ Sun: Closed`,
       tagline: "Handcrafted Furniture from Germany",
       quickLinks: "Quick Links",
       contact: "Contact",
-      copyRight: "© 2024 Holzwerk. All rights reserved.",
+      copyRight: "© 2026 Holzwerk. All rights reserved.",
     },
   },
 };
