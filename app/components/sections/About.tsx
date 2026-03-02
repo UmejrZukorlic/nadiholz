@@ -1,112 +1,102 @@
-import { Hammer, Leaf, Heart, PenTool } from "lucide-react";
+"use client";
 
-export default function About() {
-  const stats = [
-    { label: "Years Experience", value: "40+" },
-    { label: "Happy Customers", value: "2000+" },
-    { label: "Handmade", value: "100%" },
-    { label: "Passion", value: "100%" },
-  ];
+import { Award, Leaf, Heart, Settings } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/translations/translations";
 
-  const features = [
-    {
-      icon: <Hammer className="w-8 h-8 text-primary" />,
-      title: "German Craftsmanship",
-      desc: "Generations of experience and precision in every piece.",
-    },
-    {
-      icon: <Leaf className="w-8 h-8 text-primary" />,
-      title: "Sustainability",
-      desc: "Wood from certified, sustainable European forests.",
-    },
-    {
-      icon: <Heart className="w-8 h-8 text-primary" />,
-      title: "Passion",
-      desc: "Every piece of furniture is crafted with attention to detail.",
-    },
-    {
-      icon: <PenTool className="w-8 h-8 text-primary" />,
-      title: "Custom Made",
-      desc: "Individual solutions perfectly tailored to your wishes.",
-    },
-  ];
+export default function AboutSection() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const features = t.about.features.map((feature, index) => ({
+    icon:
+      index === 0 ? (
+        <Award className="w-7 h-7 text-primary" />
+      ) : index === 1 ? (
+        <Leaf className="w-7 h-7 text-primary" />
+      ) : index === 2 ? (
+        <Heart className="w-7 h-7 text-primary" />
+      ) : (
+        <Settings className="w-7 h-7 text-primary" />
+      ),
+    title: feature.title,
+    desc: feature.desc,
+  }));
+
+  const stats = t.about.stats;
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 bg-secondary text-[#1A1A1A]">
-      <div className="max-w-7xl mx-auto">
-        {/* Top Header Section */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs mb-4 text-primary font-bold">
-            About Us
+    <section
+      id="ueber-uns"
+      className="py-20 md:py-32 bg-secondary transition-all">
+      <div className="container mx-auto px-6">
+        {/* Header dijela */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <p className="text-primary text-sm uppercase tracking-[0.2em] mb-4 font-semibold">
+            {t.about.label}
           </p>
-          <h2 className="text-3xl md:text-5xl font-serif mb-6 md:mb-8 text-secondary-foreground leading-tight">
-            Tradition Meets Modern <br className="hidden md:block" />{" "}
-            Craftsmanship
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
+            {t.about.title}
           </h2>
-          {/* Popravljeno: max-w je sada 100% na mobilnom, a 60% na desktopu */}
-          <p className="max-w-full md:max-w-[70%] lg:max-w-[60%] text-base md:text-lg mx-auto leading-relaxed text-muted-foreground">
-            Since 1985, we have been crafting high-quality wooden furniture in
-            our workshop in the heart of Germany. What began as a small
-            carpentry shop has grown into a renowned atelier for custom
-            furniture pieces that last for generations.
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            {t.about.description}
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-24">
-          {features.map((f, i) => (
+        {/* Features Grid (4 kolone) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((item, index) => (
             <div
-              key={i}
-              className="flex flex-col items-start bg-primary-foreground p-6 md:p-8 h-full rounded-lg border border-transparent hover:border-gray-100 transition-all shadow-sm">
-              <div className="mb-4 bg-secondary rounded-full p-3 md:p-4 flex items-center justify-center">
-                {f.icon}
+              key={index}
+              className="bg-background rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/10">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                {item.icon}
               </div>
-
-              <div className="md:min-h-15 flex items-center mb-2">
-                <h3 className="text-lg md:text-xl font-bold tracking-tight leading-tight">
-                  {f.title}
-                </h3>
-              </div>
-
-              <div className="flex-1">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {f.desc}
-                </p>
-              </div>
+              <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center bg-primary-foreground mt-8 md:mt-16 rounded-xl p-6 md:p-12 shadow-sm">
-          <div className="order-2 lg:order-1">
-            <h3 className="text-2xl md:text-3xl font-serif mb-4 md:mb-6 italic">
-              Our Story
-            </h3>
-            <p className="text-muted-foreground mb-4 md:mb-6 italic text-sm md:text-base leading-relaxed">
-              &quot;Founded by master carpenter Hans Müller, our workshop has
-              evolved into one of the leading ateliers for custom wooden
-              furniture in Germany. Today, the third generation continues the
-              legacy.&quot;
-            </p>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              We combine traditional craftsmanship techniques with modern
-              design, placing the greatest emphasis on quality, sustainability,
-              and customer satisfaction.
-            </p>
-          </div>
+        {/* History & Stats Card */}
+        <div className="mt-16 bg-background rounded-xl p-8 md:p-12 shadow-sm">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Tekstualni dio */}
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl font-serif text-foreground">
+                {language === "de" ? "Unsere Geschichte" : "Our History"}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {language === "de"
+                  ? "Gegründet von Meisterschreiner Hans Müller, hat sich unsere Werkstatt zu einem der führenden Ateliers für maßgefertigte Holzmöbel in Deutschland entwickelt. Heute führt die dritte Generation das Erbe fort."
+                  : "Founded by master craftsman Hans Müller, our workshop has developed into one of the leading studios for custom wooden furniture in Germany. Today, the third generation continues this legacy."}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {language === "de"
+                  ? "Wir verbinden traditionelle Handwerkstechniken mit modernem Design und legen dabei größten Wert auf Qualität, Nachhaltigkeit und die Zufriedenheit unserer Kunden."
+                  : "We combine traditional craftsmanship techniques with modern design, while placing great emphasis on quality, sustainability, and customer satisfaction."}
+              </p>
+            </div>
 
-          {/* Stats Grid - Smanjen padding na mobilnom */}
-          <div className="order-1 lg:order-2 grid grid-cols-2 gap-4 md:gap-8 bg-[#FDFBF7] p-6 md:p-12 rounded-lg border border-gray-50">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl md:text-4xl font-serif text-[#D4A373] mb-1 md:mb-2">
-                  {stat.value}
+            {/* Stats Grid dijela */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="bg-secondary/50 rounded-lg p-6 text-center border border-primary/5">
+                  <p className="text-3xl md:text-4xl font-serif font-bold text-primary mb-2">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-medium">
+                    {stat.label}
+                  </p>
                 </div>
-                <div className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500 font-bold">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
