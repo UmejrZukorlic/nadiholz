@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/1.png"
+          src="/images/1.webp"
           fill
           className="w-full h-full object-cover"
           alt="Workshop"
