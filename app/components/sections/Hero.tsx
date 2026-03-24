@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import Link from "next/link";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -30,10 +31,10 @@ export default function Hero() {
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
           <button className="bg-[#D4A373] text-white h-14 px-10 rounded-lg font-bold hover:bg-[#b88b5d] transition-all">
-            {t.hero.buttonProducts}
+            <Link href="#produkte">{t.hero.buttonProducts}</Link>
           </button>
           <button className="border-2 border-white text-white h-14 px-10 rounded-lg font-medium hover:bg-white/10 transition-all">
-            {t.hero.buttonContact}
+            <Link href="#kontakt">{t.hero.buttonContact}</Link>
           </button>
         </div>
       </div>

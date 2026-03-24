@@ -72,8 +72,8 @@ export default function AboutSection() {
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {language === "de"
-                  ? "Gegründet von Meisterschreiner Hans Müller, hat sich unsere Werkstatt zu einem der führenden Ateliers für maßgefertigte Holzmöbel in Deutschland entwickelt. Heute führt die dritte Generation das Erbe fort."
-                  : "Founded by master craftsman Hans Müller, our workshop has developed into one of the leading studios for custom wooden furniture in Germany. Today, the third generation continues this legacy."}
+                  ? "Unsere Werkstatt spezialisiert sich auf handgefertigte Massivholztische und Garnituren für Garten, Terrasse und Gastronomie. Jedes Stück entsteht in sorgfältiger Einzelanfertigung."
+                  : "Our workshop specialises in handmade solid wood tables and seating sets for gardens, terraces and restaurants. Each piece is individually crafted with care."}
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 {language === "de"
@@ -82,7 +82,6 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Stats Grid dijela */}
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               {stats.map((stat, index) => (
                 <div

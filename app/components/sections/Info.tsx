@@ -3,6 +3,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import Link from "next/link";
 
 export default function InfoSection() {
   const { language } = useLanguage();
@@ -22,22 +23,22 @@ export default function InfoSection() {
       icon: <Phone className="w-5 h-5 text-primary" />,
       title: t.info.phone,
       content: (
-        <a
+        <Link
           href="tel:+498912345678"
           className="text-muted-foreground hover:text-primary transition-colors">
           {t.info.phoneNumber}
-        </a>
+        </Link>
       ),
     },
     {
       icon: <Mail className="w-5 h-5 text-primary" />,
       title: t.info.email,
       content: (
-        <a
+        <Link
           href="mailto:info@holzwerk-moebel.de"
           className="text-muted-foreground hover:text-primary transition-colors">
           {t.info.emailAddress}
-        </a>
+        </Link>
       ),
     },
     {
@@ -54,7 +55,6 @@ export default function InfoSection() {
   return (
     <section id="kontakt" className="py-24 md:py-32 bg-secondary">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary text-sm uppercase tracking-[0.2em] mb-4 font-medium">
             {t.info.label}
@@ -67,9 +67,7 @@ export default function InfoSection() {
           </p>
         </div>
 
-        {/* Info & Map Grid */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Contact Details Card */}
           <div className="bg-background rounded-xl p-8 md:p-10 shadow-sm border border-border/40">
             <h3 className="text-2xl font-serif font-semibold text-foreground mb-8">
               {language === "de" ? "Kontaktdaten" : "Contact Information"}
@@ -96,7 +94,7 @@ export default function InfoSection() {
           <div className="bg-background rounded-xl overflow-hidden shadow-sm border border-border/40 min-h-100">
             <iframe
               title="Standort Holzwerk Möbelmanufaktur"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.3475253164917!2d11.57548!3d48.13715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e75f9a38c5fd9%3A0x10cb480340458fc!2zTcO8bmNoZW4!5e0!3m2!1sde!2sde!4v1645456789012!5m2!1sde!2sde"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d311750.18747738114!2d9.171296646576385!3d52.37860929595293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2z0KXQsNC90L7QstC10YAsINCd0LXQvNCw0YfQutCw!5e0!3m2!1ssr!2srs!4v1774341237090!5m2!1ssr!2srs"
               width="100%"
               height="100%"
               allowFullScreen

@@ -10,22 +10,22 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      subtitle: "Deutsche Handwerkskunst seit 1985",
-      title: "Handgefertigte Holzmöbel & Tische",
-      titlePart2: "aus Deutschland",
+      subtitle: "Handgefertigt aus Massivholz",
+      title: "Tische & Garnituren für Garten, Terrasse & Restaurant",
+      titlePart2: "",
       buttonProducts: "Unsere Produkte",
       buttonContact: "Kontakt aufnehmen",
     },
     // About Section
     about: {
       label: "Über uns",
-      title: "Tradition trifft moderne Handwerkskunst",
+      title: "Handarbeit & Massivholz",
       description:
-        "Seit 1985 fertigen wir in unserer Werkstatt im Herzen Deutschlands hochwertige Holzmöbel. Was als kleine Schreinerei begann, ist heute ein renommiertes Atelier für maßgefertigte Möbelstücke, die Generationen überdauern.",
+        "Wir stellen in reiner Handarbeit massive Holztische und Garnituren her – perfekt für Garten, Terrasse und den Einsatz in Restaurants. Jede Konstruktion entsteht individuell und bleibend.",
       features: [
         {
-          title: "Deutsche Handwerkskunst",
-          desc: "Generationen von Erfahrung und Präzision in jedem Stück.",
+          title: "Handarbeit aus Massivholz",
+          desc: "Nur reine Handarbeit – gefertigt aus massivem Holz.",
         },
         {
           title: "Nachhaltigkeit",
@@ -41,54 +41,54 @@ export const translations = {
         },
       ],
       stats: [
-        { value: "40+", label: "Jahre Erfahrung" },
-        { value: "2000+", label: "Zufriedene Kunden" },
+        // { value: "40+", label: "Jahre Erfahrung" },
+        // { value: "2000+", label: "Zufriedene Kunden" },
         { value: "100%", label: "Handarbeit" },
         { value: "∞", label: "Leidenschaft" },
       ],
     },
-    // Products Section - USKLAĐENO SA SLIKAMA
+    // Products Section
     products: {
       label: "Unsere Produkte",
-      title: "Meisterstücke aus unserer Werkstatt",
+      title: "Massives Holz in Perfekter Ausführung",
       description:
-        "Entdecken Sie unsere Kollektion handgefertigter Unikate. Jedes Stück wird sa ljubavlju prema detaljima i najvišom preciznošću.",
+        "Wir fertigen handgearbeitete Tische und Garnituren aus Massivholz – ideal für Außenbereiche, Terrassen oder Gastronomie. Alles made by hand.",
       items: [
         {
           category: "Gartenmöbel",
           name: "Duo Gartenbank",
-          desc: "Massive Gartenbank mit integriertem Mitteltisch für entspannte Stunden im Freien.",
-          image: "/images/1.png",
+          desc: "Diese handgefertigte Bank bietet zwei bequeme Sitzplätze und eine praktische Mittelablage – ideal für Kaffee, Getränke oder kleine Auszeiten im Garten.",
+          image: "/images/1.webp",
         },
         {
           category: "Theken & Bars",
-          name: "Rustikale Bartheke",
+          name: "Bar-Tresen | Handgemacht",
           desc: "Handgefertigte Bar aus geflammtem Holz mit einer markanten, rustikalen Optik.",
-          image: "/images/2.jfif",
+          image: "/images/2.webp",
         },
         {
           category: "Sitzgruppen",
           name: "Massive Picknick-Garnitur",
           desc: "Robuste Holzsitzbank mit fest montiertem Tisch für Garten ili parkove.",
-          image: "/images/3.jfif",
+          image: "/images/3.webp",
         },
         {
           category: "Liegen",
-          name: "Holz-Sonnenliege",
-          desc: "Bequeme Sonnenliege aus massivem Holz für optimalen Komfort beim Sonnenbaden.",
-          image: "/images/4.jfif",
+          name: "Handgefertigte Holzliege",
+          desc: "Handgefertigte Holzliege aus Massivholz Natürlich. Stabil. Zeitlos.",
+          image: "/images/4.webp",
         },
         {
           category: "Tische",
-          name: "Design-Gartentisch",
-          desc: "Rustikaler Holztisch mit massivem X-Gestell für hohe Stabilität.",
-          image: "/images/5.png",
+          name: "Massiver Holztisch im rustikalen Design",
+          desc: "Handgefertigter Tisch aus massivem Holz mit einzigartiger, geflammter Oberfläche – jedes Stück ist ein Unikat.",
+          image: "/images/5.webp",
         },
         {
           category: "Sitzkombinationen",
-          name: "Balkon-Duo Set",
-          desc: "Kompakte Sitzlösung mit zwei Stühlen und integriertem Abstelltisch.",
-          image: "/images/1.png",
+          name: "Massiver Esstisch aus Eiche",
+          desc: "Dieser Tisch ist kein Möbelstück von der Stange. Er ist von Hand gebaut aus massivem Eichenholz, stark, langlebig und gemacht für Generationen.",
+          image: "/images/6.webp",
         },
       ],
       requestQuote: "Angebot anfragen",
@@ -96,9 +96,12 @@ export const translations = {
     // Materials Section - USKLAĐENO SA SLIKOM
     materials: {
       label: "Materialien & Qualität",
-      title: "Only the Finest Wood",
+      title: "Handarbeit & Massivholz",
       description:
-        "We exclusively use certified solid wood from sustainable forestry. Each type of wood has its own characteristics, which we carefully select for your furniture piece.",
+        "Wir arbeiten ausschließlich mit massivem Holz – jedes Möbelstück wird von Hand gefertigt.",
+      craftTitle: "Deutsche Handarbeit",
+      craftDesc:
+        "Nur reine Handarbeit aus massivem Holz für Garten, Terrasse und Gastronomie.",
       woods: [
         {
           name: "Oak",
@@ -162,15 +165,15 @@ export const translations = {
       phone: "Telefon",
       email: "E-Mail",
       hours: "Öffnungszeiten",
-      location: `Holzwerk Möbelmanufaktur\nMusterstraße 42\n80331 München, Deutschland`,
-      phoneNumber: "+49 89 1234 5678",
-      emailAddress: "info@holzwerk-moebel.de",
+      location: `NADIHOLZ\n Worthstrße 21\nHannover, Germany`,
+      phoneNumber: "+49 16 3152 2740",
+      emailAddress: "nadiholz21@gmail.com",
       openingHours: `Mo - Fr: 8:00 - 18:00 Uhr\nSa: 9:00 - 14:00 Uhr (nach Vereinbarung)\nSo: Geschlossen`,
     },
     // Footer
     footer: {
-      company: "Holzwerk Möbelmanufaktur",
-      tagline: "Handgefertigte Möbel aus Deutschland",
+      company: "Nadi Holz",
+      tagline: "Handgefertigte Möbel aus Massivholz",
       quickLinks: "Schnelllinks",
       contact: "Kontakt",
       copyRight: "© 2026 Holzwerk. Alle Rechte vorbehalten.",
@@ -187,9 +190,9 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      subtitle: "German Craftsmanship Since 1985",
-      title: "Handcrafted Wooden Furniture & Tables",
-      titlePart2: "from Germany",
+      subtitle: "Handcrafted solid wood goods",
+      title: "Tables & Sets for Gardens, Terraces & Restaurants",
+      titlePart2: "",
       buttonProducts: "Our Products",
       buttonContact: "Get in Touch",
     },
@@ -198,11 +201,11 @@ export const translations = {
       label: "About Us",
       title: "Tradition Meets Modern Craftsmanship",
       description:
-        "Since 1985, we have been crafting high-quality wooden furniture in our workshop in the heart of Germany. What began as a small carpentry shop is now a renowned atelier for custom-made furniture pieces that last for generations.",
+        "We craft solid wood tables and seating sets by hand – designed for gardens, terraces and restaurants. Each piece is made individually to last.",
       features: [
         {
-          title: "German Craftsmanship",
-          desc: "Generations of experience and precision in every piece.",
+          title: "Handmade Solid Wood",
+          desc: "Only pure handwork – crafted from solid wood.",
         },
         {
           title: "Sustainability",
@@ -218,8 +221,8 @@ export const translations = {
         },
       ],
       stats: [
-        { value: "40+", label: "Years of Experience" },
-        { value: "2000+", label: "Satisfied Customers" },
+        // { value: "40+", label: "Years of Experience" },
+        // { value: "2000+", label: "Satisfied Customers" },
         { value: "100%", label: "Handmade" },
         { value: "∞", label: "Passion" },
       ],
@@ -227,45 +230,45 @@ export const translations = {
     // Products Section - USKLAĐENO SA SLIKAMA
     products: {
       label: "Our Products",
-      title: "Masterpieces from our Workshop",
+      title: "Solid Wood in Perfect Craftsmanship",
       description:
-        "Discover our collection of handcrafted originals. Each piece is unique, crafted with attention to detail and highest precision.",
+        "We craft handmade tables and sets from solid wood - ideal for outdoor areas, terraces, or hospitality spaces. Everything is made by hand.",
       items: [
         {
           category: "Garden Furniture",
           name: "Duo Garden Bench",
-          desc: "Solid garden bench with integrated middle table for relaxing outdoor hours.",
-          image: "/images/1.png",
+          desc: "This handcrafted bench offers two comfortable seats and a practical center shelf - ideal for coffee, drinks, or short breaks in the garden.",
+          image: "/images/1.webp",
         },
         {
           category: "Counter & Bars",
-          name: "Rustic Bar Counter",
+          name: "Bar Counter | Handmade",
           desc: "Handcrafted bar made from scorched wood with a striking, rustic look.",
-          image: "/images/2.jfif",
+          image: "/images/2.webp",
         },
         {
-          category: "Outdoor Sets",
+          category: "Seating Sets",
           name: "Massive Picnic Set",
           desc: "Robust wooden bench with a fixed table for garden or park use.",
-          image: "/images/3.jfif",
+          image: "/images/3.webp",
         },
         {
           category: "Loungers",
-          name: "Wooden Sun Lounger",
-          desc: "Comfortable sun lounger made from solid wood for optimal relaxation.",
-          image: "/images/4.jfif",
+          name: "Handcrafted Wooden Lounger",
+          desc: "Handcrafted wooden lounger made from solid wood. Natural. Sturdy. Timeless.",
+          image: "/images/4.webp",
         },
         {
           category: "Tables",
-          name: "Design Garden Table",
-          desc: "Rustic wooden table with a massive X-frame for high stability.",
-          image: "/images/5.png",
+          name: "Massive Wooden Table in Rustic Design",
+          desc: "Handcrafted table made from solid wood with a unique scorched finish - each piece is one of a kind.",
+          image: "/images/5.webp",
         },
         {
           category: "Seating Combos",
-          name: "Balkony Duo Set",
-          desc: "Compact seating solution with two chairs and an integrated side table.",
-          image: "/images/1.png",
+          name: "Massive Oak Dining Table",
+          desc: "This table is not off the shelf. It is built by hand from solid oak - strong, durable, and made for generations.",
+          image: "/images/6.webp",
         },
       ],
       requestQuote: "Request Quote",
@@ -273,9 +276,12 @@ export const translations = {
     // Materials Section - USKLAĐENO SA SLIKOM
     materials: {
       label: "Materials & Quality",
-      title: "Only the Finest Wood",
+      title: "Handwork & Solid Wood",
       description:
-        "We exclusively use certified solid wood from sustainable forestry. Each type of wood has its own characteristics, which we carefully select for your furniture piece.",
+        "We work exclusively with solid wood – every furniture piece is crafted by hand.",
+      craftTitle: "German Handwork",
+      craftDesc:
+        "Only pure handwork from solid wood for gardens, terraces, and restaurants.",
       woods: [
         {
           name: "Oak",
@@ -339,15 +345,15 @@ export const translations = {
       phone: "Phone",
       email: "E-Mail",
       hours: "Opening Hours",
-      location: `Holzwerk Furniture Manufactory\nMusterstraße 42\n80331 Munich, Germany`,
-      phoneNumber: "+49 89 1234 5678",
-      emailAddress: "info@holzwerk-moebel.de",
+      location: `NADIHOLZ\n Worthstrße 21\nHannover, Germany`,
+      phoneNumber: "+49 16 3152 2740",
+      emailAddress: "nadiholz21@gmail.com",
       openingHours: `Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM (by appointment)\nSun: Closed`,
     },
     // Footer
     footer: {
-      company: "Holzwerk Furniture Manufactory",
-      tagline: "Handcrafted Furniture from Germany",
+      company: "Nadi Holz Furniture Manufactory",
+      tagline: "Handcrafted solid wood furniture",
       quickLinks: "Quick Links",
       contact: "Contact",
       copyRight: "© 2026 Holzwerk. All rights reserved.",

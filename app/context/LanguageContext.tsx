@@ -14,11 +14,18 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window === "undefined") return "de";
+  // start with a hard‑coded default so the server and the initial client render
+  // produce the same markup.  We read from localStorage only after the
+  // component has mounted, which avoids hydration mismatches when the saved
+  // language differs from the default.
+  const [language, setLanguageState] = useState<Language>("de");
+
+  React.useEffect(() => {
     const saved = localStorage.getItem("language") as Language | null;
-    return saved || "de";
-  });
+    if (saved && saved !== language) {
+      setLanguageState(saved);
+    }
+  }, []); // run once on mount
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

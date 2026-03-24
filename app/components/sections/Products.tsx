@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import Link from "next/link";
 
 export default function ProductsSection() {
   const { language } = useLanguage();
@@ -73,9 +74,11 @@ export default function ProductsSection() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <button className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 font-semibold h-12 rounded-md px-8 text-base">
-            {language === "de"
-              ? "Individuelle Anfertigung anfragen"
-              : "Request Custom Furniture"}
+            <Link href="#anfrage">
+              {language === "de"
+                ? "Individuelle Anfertigung anfragen"
+                : "Request Custom Furniture"}
+            </Link>
           </button>
         </div>
       </div>
