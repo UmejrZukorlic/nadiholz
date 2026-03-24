@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Globe, Menu, X } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,24 +48,24 @@ export default function Header() {
       }`}>
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between">
-          <a
+          <Link
             href="#"
             className={`text-2xl font-serif font-semibold transition-colors ${
               isScrolled || isOpen ? "text-foreground" : "text-white"
             }`}>
             Nadi Holz<span className="text-primary">.</span>
-          </a>
+          </Link>
 
           <div
             className={`hidden lg:flex items-center gap-8 ${isScrolled ? "text-foreground" : "text-white"}`}>
             <ul className="flex items-center gap-8 text-sm font-medium">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="hover:text-primary transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -76,7 +77,7 @@ export default function Header() {
                 <span>{language === "de" ? "🇩🇪 DE" : "🇬🇧 EN"}</span>
               </button>
               {showLanguageMenu && (
-                <div className="absolute top-full right-0 mt-2 bg-background border border-border rounded-md shadow-lg overflow-hidden z-10">
+                <div className="absolute top-full right-0 mt-2 bg-background border border-border rounded-md shadow-lg overflow-hidden z-10 text-secondary-foreground">
                   <button
                     onClick={() => handleLanguageChange("de")}
                     className={`w-full px-4 py-2 text-left hover:bg-primary/10 transition-colors flex items-center gap-2 ${
@@ -115,12 +116,12 @@ export default function Header() {
             <ul className="flex flex-col gap-4 text-lg font-medium">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-foreground hover:text-primary transition-colors block py-2"
                     onClick={() => setIsOpen(false)}>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

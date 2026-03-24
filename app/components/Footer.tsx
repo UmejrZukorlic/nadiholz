@@ -1,13 +1,17 @@
 "use client";
 
+import React from "react";
 import { Instagram, Facebook, Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import Link from "next/link";
 
 export default function Footer() {
   const { language } = useLanguage();
   const t = translations[language];
-  const currentYear = new Date().getFullYear();
+  // compute the year once; both server and client will see the same value on
+  // the initial render which avoids a potential mismatch at new year boundaries.
+  const currentYear = React.useMemo(() => new Date().getFullYear(), []);
 
   return (
     <footer className="bg-accent text-accent-foreground">
@@ -15,34 +19,34 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Socials */}
           <div className="lg:col-span-2">
-            <a
+            <Link
               href="#"
               className="text-2xl font-serif font-semibold text-accent-foreground mb-4 block">
               Holzwerk<span className="text-wood-light">.</span>
-            </a>
+            </Link>
             <p className="text-accent-foreground/80 leading-relaxed max-w-md mb-6">
               {t.footer.tagline}{" "}
               {language === "de"
-                ? "Seit 1985 verbinden wir traditionelle Handwerkskunst mit modernem Design."
-                : "Since 1985, we combine traditional craftsmanship with modern design."}
+                ? "Zusammenbau von Gartenmöbeln aus Holz, Holzverarbeitung, Montage von vorgefertigten Bauteilen, Oberflächenbehandlung von Holzprodukten"
+                : "Assembly of wooden garden furniture, Wood processing, assembly of prefabricated components, Surface treatment of wood products"}
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://instagram.com"
+              <Link
+                href="https://www.instagram.com/nadiholz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-accent-foreground/10 hover:bg-accent-foreground/20 flex items-center justify-center transition-all"
                 aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
+              </Link>
+              <Link
+                href="https://www.facebook.com/people/Nadi-Holz/61586676707548/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-accent-foreground/10 hover:bg-accent-foreground/20 flex items-center justify-center transition-all"
                 aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -53,39 +57,39 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
+                <Link
                   href="#"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.home}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#ueber-uns"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.about}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#produkte"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.products}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#materialien"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.materials}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#anfrage"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.contact}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -98,19 +102,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-accent-foreground/70">
                 <Phone className="w-4 h-4 text-wood-light" />
-                <a
+                <Link
                   href="tel:+498912345678"
                   className="hover:text-accent-foreground transition-colors">
                   +49 89 1234 5678
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/70">
                 <Mail className="w-4 h-4 text-wood-light" />
-                <a
+                <Link
                   href="mailto:info@holzwerk-moebel.de"
                   className="hover:text-accent-foreground transition-colors">
                   info@holzwerk-moebel.de
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="mt-6 text-accent-foreground/60 text-sm leading-relaxed">
@@ -131,21 +135,21 @@ export default function Footer() {
                 : "All rights reserved."}
             </p>
             <div className="flex gap-8 text-xs font-medium">
-              <a
+              <Link
                 href="#"
                 className="text-accent-foreground/40 hover:text-accent-foreground transition-colors uppercase tracking-widest">
                 {language === "de" ? "Impressum" : "Imprint"}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-accent-foreground/40 hover:text-accent-foreground transition-colors uppercase tracking-widest">
                 {language === "de" ? "Datenschutz" : "Privacy"}
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="text-accent-foreground/40 hover:text-accent-foreground transition-colors uppercase tracking-widest">
                 {language === "de" ? "AGB" : "Terms"}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
