@@ -5,16 +5,20 @@ import { Instagram, Facebook, Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import Link from "next/link";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function Footer() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
   // compute the year once; both server and client will see the same value on
   // the initial render which avoids a potential mismatch at new year boundaries.
   const currentYear = React.useMemo(() => new Date().getFullYear(), []);
 
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer
+      ref={ref}
+      className={`bg-accent text-accent-foreground transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}>
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Socials */}

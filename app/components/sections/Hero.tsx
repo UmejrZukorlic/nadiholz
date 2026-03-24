@@ -4,13 +4,17 @@ import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import Link from "next/link";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function Hero() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={ref}
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden transition-all duration-600 ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}>
       <div className="absolute inset-0">
         <Image
           src="/images/1.webp"

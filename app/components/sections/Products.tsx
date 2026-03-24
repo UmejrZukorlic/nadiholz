@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import Link from "next/link";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function ProductsSection() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const products = t.products.items.map((item) => ({
     category: item.category,
@@ -18,7 +20,10 @@ export default function ProductsSection() {
   }));
 
   return (
-    <section id="produkte" className="py-24 md:py-32 bg-background">
+    <section
+      id="produkte"
+      className={`py-24 md:py-32 bg-background transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}
+      ref={ref}>
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">

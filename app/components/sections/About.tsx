@@ -3,10 +3,12 @@
 import { Award, Leaf, Heart, Settings } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function AboutSection() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const features = t.about.features.map((feature, index) => ({
     icon:
@@ -27,8 +29,9 @@ export default function AboutSection() {
 
   return (
     <section
+      ref={ref}
       id="ueber-uns"
-      className="py-20 md:py-32 bg-secondary transition-all">
+      className={`py-20 md:py-32 bg-secondary transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}>
       <div className="container mx-auto px-6">
         {/* Header dijela */}
         <div className="max-w-3xl mx-auto text-center mb-16">

@@ -3,6 +3,7 @@
 import { Check } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import { useInView } from "@/app/hooks/useInView";
 
 const colorClasses: Record<string, string> = {
   Eiche: "bg-amber-200",
@@ -18,6 +19,7 @@ const colorClasses: Record<string, string> = {
 export default function MaterialsSection() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const woodTypes = t.materials.woods.map((wood) => ({
     name: wood.name,
@@ -27,7 +29,10 @@ export default function MaterialsSection() {
   }));
 
   return (
-    <section id="materialien" className="py-24 md:py-32 bg-secondary">
+    <section
+      id="materialien"
+      className={`py-24 md:py-32 bg-secondary transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}
+      ref={ref}>
       <div className="container mx-auto px-6">
         {/* Header dijela */}
         <div className="max-w-3xl mx-auto text-center mb-16">

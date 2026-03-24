@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import { Upload, Send } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function ContactForm() {
   const [file, setFile] = useState<File | null>(null);
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -21,7 +23,10 @@ export default function ContactForm() {
   const woodOptionsEn = ["Oak", "Walnut", "Beech", "Cherry", "Ash"];
 
   return (
-    <section id="anfrage" className="py-24 md:py-32 bg-background">
+    <section
+      id="anfrage"
+      className={`py-24 md:py-32 bg-background transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}
+      ref={ref}>
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

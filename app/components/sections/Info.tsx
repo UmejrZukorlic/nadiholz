@@ -4,10 +4,12 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import Link from "next/link";
+import { useInView } from "@/app/hooks/useInView";
 
 export default function InfoSection() {
   const { language } = useLanguage();
   const t = translations[language];
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const contactDetails = [
     {
@@ -53,7 +55,10 @@ export default function InfoSection() {
   ];
 
   return (
-    <section id="kontakt" className="py-24 md:py-32 bg-secondary">
+    <section
+      id="kontakt"
+      className={`py-24 md:py-32 bg-secondary transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}
+      ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary text-sm uppercase tracking-[0.2em] mb-4 font-medium">
