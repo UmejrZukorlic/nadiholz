@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Holzwerk Möbelmanufaktur",
-  description: "Handgefertigte Holzmöbel und Tische aus Deutschland",
+  title: "Nadiholz",
+  description:
+    "Handgefertigte Möbel aus Massivholz Zusammenbau von Gartenmöbeln aus Holz, Holzverarbeitung, Montage von vorgefertigten Bauteilen, Oberflächenbehandlung von Holzprodukten",
 };
 
 export default function RootLayout({

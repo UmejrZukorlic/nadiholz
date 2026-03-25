@@ -109,7 +109,7 @@ export default function Footer() {
                 <Link
                   href="tel:+498912345678"
                   className="hover:text-accent-foreground transition-colors">
-                  +49 89 1234 5678
+                  +49 16 3152 2740
                 </Link>
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/70">
@@ -117,13 +117,13 @@ export default function Footer() {
                 <Link
                   href="mailto:info@holzwerk-moebel.de"
                   className="hover:text-accent-foreground transition-colors">
-                  info@holzwerk-moebel.de
+                  nadiholz21@gmail.com
                 </Link>
               </li>
             </ul>
             <div className="mt-6 text-accent-foreground/60 text-sm leading-relaxed">
-              <p>Musterstraße 42</p>
-              <p>80331 München</p>
+              <p>Worthstrße 21</p>
+              <p>Hannover, Germany</p>
               <p>{language === "de" ? "Deutschland" : "Germany"}</p>
             </div>
           </div>
