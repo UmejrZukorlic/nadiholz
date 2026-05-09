@@ -7,6 +7,7 @@ export const translations = {
       products: "Produkte",
       materials: "Materialien",
       contact: "Anfrage",
+      gallery: "Galerie",
     },
     // Hero Section
     hero: {
@@ -14,7 +15,7 @@ export const translations = {
       title: "Tische & Garnituren für Garten, Terrasse & Restaurant",
       titlePart2: "",
       buttonProducts: "Unsere Produkte",
-      buttonContact: "Kontakt aufnehmen",
+      buttonContact: "Laden Sie den Katalog herunter",
     },
     // About Section
     about: {
@@ -89,6 +90,18 @@ export const translations = {
           name: "Massiver Esstisch aus Eiche",
           desc: "Dieser Tisch ist kein Möbelstück von der Stange. Er ist von Hand gebaut aus massivem Eichenholz, stark, langlebig und gemacht für Generationen.",
           image: "/images/6.webp",
+        },
+        {
+          category: "Stühle",
+          name: "Handgefertigter Holzstuhl",
+          desc: "Komfortabler Holzstuhl aus massivem Holz gefertigt – perfekt für Essbereiche, Terrassen oder Gartenmöbel. Ergonomisches Design mit natürlicher Holzoptik.",
+          image: "/images/7.jpeg",
+        },
+        {
+          category: "Gartenmöbel",
+          name: "Rustikale Holzbank",
+          desc: "Robuste Holzbank im rustikalen Stil, handgefertigt aus massivem Holz. Ideal für Gärten, Parks oder Außenbereiche – wetterfest und langlebig.",
+          image: "/images/8.jpeg",
         },
       ],
       requestQuote: "Angebot anfragen",
@@ -187,6 +200,7 @@ export const translations = {
       products: "Products",
       materials: "Materials",
       contact: "Inquiry",
+      gallery: "Gallery",
     },
     // Hero Section
     hero: {
@@ -194,7 +208,7 @@ export const translations = {
       title: "Tables & Sets for Gardens, Terraces & Restaurants",
       titlePart2: "",
       buttonProducts: "Our Products",
-      buttonContact: "Get in Touch",
+      buttonContact: "Download the catalog",
     },
     // About Section
     about: {
@@ -269,6 +283,18 @@ export const translations = {
           name: "Massive Oak Dining Table",
           desc: "This table is not off the shelf. It is built by hand from solid oak - strong, durable, and made for generations.",
           image: "/images/6.webp",
+        },
+        {
+          category: "Chairs",
+          name: "Handcrafted Wooden Chair",
+          desc: "Comfortable wooden chair crafted from solid wood – perfect for dining areas, terraces, or garden furniture. Ergonomic design with natural wood finish.",
+          image: "/images/7.jpeg",
+        },
+        {
+          category: "Garden Furniture",
+          name: "Rustic Wooden Bench",
+          desc: "Robust wooden bench in rustic style, handcrafted from solid wood. Ideal for gardens, parks, or outdoor areas – weather-resistant and long-lasting.",
+          image: "/images/8.jpeg",
         },
       ],
       requestQuote: "Request Quote",

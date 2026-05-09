@@ -27,11 +27,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: t.nav.home, href: "#" },
-    { name: t.nav.about, href: "#ueber-uns" },
-    { name: t.nav.products, href: "#produkte" },
-    { name: t.nav.materials, href: "#materialien" },
-    { name: t.nav.contact, href: "#anfrage" },
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.about, href: "/#ueber-uns" },
+    { name: t.nav.products, href: "/#produkte" },
+    { name: t.nav.materials, href: "/#materialien" },
+    { name: t.nav.gallery, href: "/gallery" },
+    { name: t.nav.contact, href: "/#anfrage" },
   ];
 
   const handleLanguageChange = (lang: "de" | "en") => {
@@ -49,7 +50,7 @@ export default function Header() {
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <Link
-            href="#"
+            href="/"
             className={`text-2xl font-serif font-semibold transition-colors ${
               isScrolled || isOpen ? "text-foreground" : "text-white"
             }`}>

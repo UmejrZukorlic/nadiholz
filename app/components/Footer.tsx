@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className={`bg-accent text-accent-foreground transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}>
+      className={`bg-secondary-foreground text-accent-foreground transition-all ${isInView ? "animate-fade-in-up" : "opacity-hidden"}`}>
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand & Socials */}
@@ -86,6 +86,13 @@ export default function Footer() {
                   href="#materialien"
                   className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
                   {t.nav.materials}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gallery"
+                  className="text-accent-foreground/70 hover:text-accent-foreground transition-colors">
+                  {t.nav.gallery}
                 </Link>
               </li>
               <li>
