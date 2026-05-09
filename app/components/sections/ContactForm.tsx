@@ -2,12 +2,12 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Upload, Send } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import { useInView } from "@/app/hooks/useInView";
 
 export default function ContactForm({ selectedProduct }: any) {
+  const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const { language } = useLanguage();
@@ -42,7 +42,7 @@ export default function ContactForm({ selectedProduct }: any) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setLoading(true);
     let fileData = "";
     if (file) {
       fileData = await toBase64(file);
@@ -50,26 +50,39 @@ export default function ContactForm({ selectedProduct }: any) {
 
     const formData = new FormData(formRef.current!);
 
-    await emailjs.send(
-      "service_ra666rz",
-      "template_ac16ks8",
-      {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        productType: formData.get("productType"),
-        dimensions: formData.get("dimensions"),
-        woodType: formData.get("woodType"),
-        description: formData.get("description"),
-        file: fileData,
-        file_name: file?.name || "",
-      },
-      "xb6WVSllMvrLzpPEI",
-    );
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      productType: formData.get("productType"),
+      dimensions: formData.get("dimensions"),
+      woodType: formData.get("woodType"),
+      description: formData.get("description"),
+    };
 
-    alert("Poslato!");
-    formRef.current?.reset();
-    setFile(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert("Poslato!");
+        formRef.current?.reset();
+        setFile(null);
+      } else {
+        alert("Greška pri slanju");
+      }
+      setLoading(false);
+    } catch (err) {
+      alert("Greška na serveru");
+      setLoading(false);
+    }
   };
 
   const woodOptions = ["Eiche", "Nussbaum", "Buche", "Kirsche", "Esche"];
@@ -186,7 +199,8 @@ export default function ContactForm({ selectedProduct }: any) {
             type="submit"
             className="w-full flex items-center justify-center gap-2 bg-primary text-white h-12 rounded-md">
             <Send className="w-5 h-5" />
-            {t.contact.formFields.submit}
+            {loading ? "Sending..." : t.contact.formFields.submit}
+            {}
           </button>
         </form>
       </div>
