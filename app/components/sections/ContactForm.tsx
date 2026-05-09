@@ -5,10 +5,13 @@ import { Upload, Send } from "lucide-react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/translations/translations";
 import { useInView } from "@/app/hooks/useInView";
+import Image from "next/image";
 
 export default function ContactForm({ selectedProduct }: any) {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+
   const formRef = useRef<HTMLFormElement>(null);
   const { language } = useLanguage();
   const t = translations[language];
@@ -26,9 +29,21 @@ export default function ContactForm({ selectedProduct }: any) {
       selectedProduct.desc;
   }, [selectedProduct]);
 
+  // cleanup preview memory
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+    const selectedFile = e.target.files?.[0];
+
+    if (selectedFile) {
+      setFile(selectedFile);
+
+      const objectUrl = URL.createObjectURL(selectedFile);
+      setPreview(objectUrl);
     }
   };
 
@@ -43,6 +58,7 @@ export default function ContactForm({ selectedProduct }: any) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
     let fileData = "";
     if (file) {
       fileData = await toBase64(file);
@@ -58,6 +74,9 @@ export default function ContactForm({ selectedProduct }: any) {
       dimensions: formData.get("dimensions"),
       woodType: formData.get("woodType"),
       description: formData.get("description"),
+
+      file: fileData,
+      file_name: file?.name,
     };
 
     try {
@@ -75,14 +94,21 @@ export default function ContactForm({ selectedProduct }: any) {
         alert("Poslato!");
         formRef.current?.reset();
         setFile(null);
+        setPreview(null);
       } else {
         alert("Greška pri slanju");
       }
+
       setLoading(false);
     } catch (err) {
-      alert("Greška na serveru");
+      alert("Greška na serveru" + err);
       setLoading(false);
     }
+  };
+
+  const removeFile = () => {
+    setFile(null);
+    setPreview(null);
   };
 
   const woodOptions = ["Eiche", "Nussbaum", "Buche", "Kirsche", "Esche"];
@@ -170,10 +196,8 @@ export default function ContactForm({ selectedProduct }: any) {
             placeholder={t.contact.formFields.description}
           />
 
-          <input type="hidden" name="file" />
-          <input type="hidden" name="file_name" />
-
-          <div className="border-2 border-dashed border-border rounded-lg p-6 text-center mb-8">
+          {/* UPLOAD */}
+          <div className="border-2 border-dashed border-border rounded-lg p-6 text-center mb-4">
             <input
               type="file"
               id="file-upload"
@@ -181,6 +205,7 @@ export default function ContactForm({ selectedProduct }: any) {
               className="hidden"
               onChange={handleFileChange}
             />
+
             <label htmlFor="file-upload" className="cursor-pointer">
               <div className="flex flex-col items-center gap-2 text-muted-foreground">
                 <Upload className="w-8 h-8" />
@@ -195,12 +220,33 @@ export default function ContactForm({ selectedProduct }: any) {
             </label>
           </div>
 
+          {/* PREVIEW */}
+          {preview && (
+            <div className="flex justify-center mb-6 relative w-fit mx-auto">
+              <div className="relative">
+                <Image
+                  src={preview}
+                  alt="Preview"
+                  width={300}
+                  height={200}
+                  className="max-h-48 rounded-lg border shadow-sm object-cover"
+                />
+
+                <button
+                  type="button"
+                  onClick={removeFile}
+                  className="absolute -top-2 -right-2 bg-black text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-red-500 transition">
+                  ✕
+                </button>
+              </div>
+            </div>
+          )}
+
           <button
             type="submit"
             className="w-full flex items-center justify-center gap-2 bg-primary text-white h-12 rounded-md">
             <Send className="w-5 h-5" />
             {loading ? "Sending..." : t.contact.formFields.submit}
-            {}
           </button>
         </form>
       </div>

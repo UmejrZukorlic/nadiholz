@@ -14,11 +14,13 @@ export async function POST(req: Request) {
       dimensions,
       woodType,
       description,
+      file,
+      file_name,
     } = body;
 
     const data = await resend.emails.send({
       from: "info@umejrzukorlic.xyz",
-      to: "nadiholz21@gmail.com ",
+      to: "nadiholz21@gmail.com",
       subject: "Neue Nachricht von der Website",
       html: `
   <div style="
@@ -227,6 +229,14 @@ export async function POST(req: Request) {
     </div>
   </div>
 `,
+      attachments: file
+        ? [
+            {
+              filename: file_name || "upload.png",
+              content: file.split("base64,")[1],
+            },
+          ]
+        : [],
     });
 
     console.log(data);
