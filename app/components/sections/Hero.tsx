@@ -38,7 +38,9 @@ export default function Hero() {
             <Link href="#produkte">{t.hero.buttonProducts}</Link>
           </button>
           <button className="border-2 border-white text-white h-14 px-10 rounded-lg font-medium hover:bg-white/10 transition-all">
-            <Link href="#kontakt">{t.hero.buttonContact}</Link>
+            <Link href="/pdf/NadiHolz_flayer.pdf" download={true}>
+              {t.hero.buttonContact}
+            </Link>
           </button>
         </div>
       </div>
