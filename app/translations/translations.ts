@@ -95,13 +95,13 @@ export const translations = {
           category: "Stühle",
           name: "Kleine Tische",
           desc: "Handgefertigter kleiner Holztisch aus robustem Massivholz – perfekt für die Terrasse, den Balkon oder als Ablage im Garten. Witterungsbeständig verarbeitet mit einer warmen, natürlichen Holzoptik.",
-          image: "/images/7.jpeg",
+          image: "/images/7.webp",
         },
         {
           category: "Gartenmöbel",
           name: "Rustikale Holzbank",
           desc: "Robuste Holzbank im rustikalen Stil, handgefertigt aus massivem Holz. Ideal für Gärten, Parks oder Außenbereiche – wetterfest und langlebig.",
-          image: "/images/8.jpeg",
+          image: "/images/8.webp",
         },
         {
           category: "Gartenmöbel",
@@ -294,13 +294,13 @@ export const translations = {
           category: "Tables",
           name: "Small Tables",
           desc: "Handcrafted small wooden table made from robust solid wood - perfect for the terrace, balcony, or as a garden side table. Weather-resistant finish with a warm, natural wood look.",
-          image: "/images/7.jpeg",
+          image: "/images/7.webp",
         },
         {
           category: "Garden Furniture",
           name: "Rustic Wooden Bench",
           desc: "Robust wooden bench in rustic style, handcrafted from solid wood. Ideal for gardens, parks, or outdoor areas – weather-resistant and long-lasting.",
-          image: "/images/8.jpeg",
+          image: "/images/8.webp",
         },
         {
           category: "Garden Furniture",
