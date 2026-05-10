@@ -93,8 +93,8 @@ export const translations = {
         },
         {
           category: "Stühle",
-          name: "Handgefertigter Holzstuhl",
-          desc: "Komfortabler Holzstuhl aus massivem Holz gefertigt – perfekt für Essbereiche, Terrassen oder Gartenmöbel. Ergonomisches Design mit natürlicher Holzoptik.",
+          name: "Kleine Tische",
+          desc: "Handgefertigter kleiner Holztisch aus robustem Massivholz – perfekt für die Terrasse, den Balkon oder als Ablage im Garten. Witterungsbeständig verarbeitet mit einer warmen, natürlichen Holzoptik.",
           image: "/images/7.jpeg",
         },
         {
@@ -102,6 +102,12 @@ export const translations = {
           name: "Rustikale Holzbank",
           desc: "Robuste Holzbank im rustikalen Stil, handgefertigt aus massivem Holz. Ideal für Gärten, Parks oder Außenbereiche – wetterfest und langlebig.",
           image: "/images/8.jpeg",
+        },
+        {
+          category: "Gartenmöbel",
+          name: "Gartenschaukel",
+          desc: "Handgefertigte Gartenbank-Schaukel aus massivem Holz – perfekt für entspannte Stunden im Freien. Stabil konstruiert, wetterfest lackiert und ein eleganter Blickfang für jeden Garten.",
+          image: "/images/45.webp",
         },
       ],
       requestQuote: "Angebot anfragen",
@@ -285,9 +291,9 @@ export const translations = {
           image: "/images/6.webp",
         },
         {
-          category: "Chairs",
-          name: "Handcrafted Wooden Chair",
-          desc: "Comfortable wooden chair crafted from solid wood – perfect for dining areas, terraces, or garden furniture. Ergonomic design with natural wood finish.",
+          category: "Tables",
+          name: "Small Tables",
+          desc: "Handcrafted small wooden table made from robust solid wood - perfect for the terrace, balcony, or as a garden side table. Weather-resistant finish with a warm, natural wood look.",
           image: "/images/7.jpeg",
         },
         {
@@ -295,6 +301,12 @@ export const translations = {
           name: "Rustic Wooden Bench",
           desc: "Robust wooden bench in rustic style, handcrafted from solid wood. Ideal for gardens, parks, or outdoor areas – weather-resistant and long-lasting.",
           image: "/images/8.jpeg",
+        },
+        {
+          category: "Garden Furniture",
+          name: "Garden Swing",
+          desc: "Handcrafted solid wood porch swing – perfect for relaxing outdoors. Features a sturdy construction, weather-resistant white finish, and adds a classic, elegant touch to your garden.",
+          image: "/images/45.webp",
         },
       ],
       requestQuote: "Request Quote",
